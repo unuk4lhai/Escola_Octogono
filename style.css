@@ -5,14 +5,18 @@ body{
     flex-direction: column;
     justify-content: space-between;
     background-color: black;
-    overflow: hidden;
+    overflow-x: hidden;
     margin-left: 0px;
     margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 0px;
 }
 
 /* estilo da pagina inicial */
 
 #header_pag_inicial{
+    position: sticky;
+    top: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -21,9 +25,57 @@ body{
 }
 
 #pag_inicial{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
     width: 100vw;
-    height: 80vh;
+    height: 200vh;
     background-color: #E9E9E9;
+    overflow-y: scroll;
+}
+
+.div_filtro_pag_inicial{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 45vw;
+    height: 10vh;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+}
+
+#botao_carrega_alunos_pag_inicial{
+    width: 15vw;
+    height: 7vh;
+    border-radius: 40px;
+    background-color: #59BB5D;
+    color: white;
+    font-family: Kadwa;
+    font-size: 24px;
+    margin-top: 3vh;
+}
+
+#campo_turma{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 55vw;
+    height: 256vh;
+    margin-top: 6vh;
+    margin-bottom: 6vh;
+    background-color: white;
+}
+
+aside{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 55vw;
+    height: 8vh;
+    font-family: Kadwa;
+    font-size: 20px;
 }
 
 #footer_pag_inicial{
@@ -205,6 +257,7 @@ select {
     border: 1px solid black;
     border-radius: 10px;
     background-color: white;
+    font-size: 18px;
   }
 
 #botao_gerar_relatorio{
