@@ -22,7 +22,7 @@
             </button>
             <div style="width: 25%; display: flex; justify-content: space-around; align-items: center;">
                 <img src="Imagens/octogono.png" style="width: 60px; height: 60px;">
-                <p style="font-size: 30px; color: white; font-family: Inknut Antiqua;">Escola Octógono</p>
+                <p id="titulo_header">Escola Octógono</p>
             </div>
             <div style="width: 7%;"></div>
         </header>
@@ -64,9 +64,9 @@
             
             <section id="campo_turma">
                 <div style="width: 55vw; display: flex; justify-content: space-around; align-items: center;">
-                    <p style=" font-family: kadwa; font-size: 20px;">RA</p>
-                    <p style=" font-family: kadwa; font-size: 20px;">Aluno</p>
-                    <p style=" font-family: kadwa; font-size: 20px;">Faltas</p>
+                    <p class="titulo_coluna_alunos">RA</p>
+                    <p class="titulo_coluna_alunos">Aluno</p>
+                    <p class="titulo_coluna_alunos">Faltas</p>
                 </div>
             </section>
         </section>
@@ -81,11 +81,11 @@
                 <section id="menu_opcoes">
                     <button class="botaoNav" onclick="abrePagRelatorio()">
                         <img src="Imagens/relatorio.png" style="width: 60px; height: 60px;">
-                        <p style="display: flex; justify-content: flex-start; width: 15vw; font-size: 20px; font-family: Kadwa; margin-left: 1vw;">Relatórios de faltas</p>
+                        <p class="texto_botao_menu">Relatórios de faltas</p>
                     </button>
                     <button class="botaoNav" onclick="abrePagAjustes()">
                         <img src="Imagens/ajustes.png" style="width: 60px; height: 60px;">
-                        <p style="display: flex; justify-content: flex-start; width: 15vw; font-size: 20px; font-family: Kadwa; margin-left: 1vw;">Ajustes</p>
+                        <p class="texto_botao_menu">Ajustes</p>
                     </button>
                 </section>
             </nav>
@@ -96,7 +96,7 @@
             <section id="pag_relatorio">
                 <header id="header_pag_relatorio">
                     <img src="Imagens/octogono.png" style="width: 60px; height: 60px; margin-left: 1%;">
-                    <p style="font-size: 30px; color: white; font-family: Inknut Antiqua;">Relatórios de faltas</p>
+                    <p id="titulo_header_relatorio">Relatórios de faltas</p>
                     <button onclick="fechaPagRelatorio()" style="width: 6%; background: none; border: none; outline: none; box-shadow: none;">
                         <img src="Imagens/x.png" style="width: 30px; height: 30px;">
                     </button>
@@ -175,7 +175,17 @@
                         <img src="Imagens/x.png" style="width: 30px; height: 30px;">
                     </button>
                 </header>
-                <section id="corpo_pag_ajustes"></section>
+                <section id="corpo_pag_ajustes">
+                    <p style="width: 40vw; font-size: 30px; height: 5vh; display: flex; justify-content: center; align-items: center; font-family: Kadwa; margin-bottom: -2vh;">Alterar fonte da página<p>
+                    <div class="div_ajustes">
+                        <button onclick="tirarFonteDislexia()" id="botao_fonte_padrao"></button>
+                        <p style="width: 40vw; font-size: 20px; height: 5vh; display: flex; justify-content: flex-start; align-items: center; font-family: Kadwa; margin-left: 1vw;">Fonte padrão</p>
+                    </div>
+                    <div class="div_ajustes">
+                        <button onclick="colocarFonteDislexia()" id="botao_fonte_dislexia"></button>
+                        <p style="width: 40vw; font-size: 20px; height: 5vh; display: flex; justify-content: flex-start; align-items: center; font-family: OpenDyslexic3; margin-left: 1vw;">Fonte recomendada para dislexia</p>
+                    </div>
+                </section>
                 <footer id="footer_pag_ajustes"></footer>
             </section>
         </section>
