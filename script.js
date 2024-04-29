@@ -43,20 +43,55 @@ function getAlunos(){
         console.log(dados.result.length)
 
         dados.result.forEach(function(aluno){
-            var alunoDiv = document.createElement('aside');
+            var alunoDiv = document.createElement('button');
+            alunoDiv.classList.add("aluno_pagina_inicial");
             var alunoIdDiv = document.createElement('article');
             var alunoNomeDiv = document.createElement('article');
             var alunoFaltasDiv = document.createElement('article');
             alunoIdDiv.appendChild(document.createTextNode(aluno.id_aluno));
             alunoNomeDiv.appendChild(document.createTextNode(aluno.nome_aluno));
-            alunoFaltasDiv.appendChild(document.createTextNode(aluno.n_de_faltas));
             alunoDiv.appendChild(alunoIdDiv);
             alunoDiv.appendChild(alunoNomeDiv);
             alunoDiv.appendChild(alunoFaltasDiv);
             document.getElementById('campo_turma').appendChild(alunoDiv);
+            
+            let textoAlunoFaltou = null;
+            let flag_faltou = false;
+
+            alunoDiv.onclick = function() {
+                if (!flag_faltou) {
+                    alunoDiv.classList.remove("aluno_pagina_inicial");
+                    alunoDiv.classList.add("aluno_pagina_inicial_falta");
+                    textoAlunoFaltou = document.createTextNode("Faltou!");
+                    alunoFaltasDiv.appendChild(textoAlunoFaltou);
+                    
+                    flag_faltou = true;
+                } else {
+                    alunoDiv.classList.remove("aluno_pagina_inicial_falta");
+                    alunoDiv.classList.add("aluno_pagina_inicial");
+                    if (textoAlunoFaltou) {
+                        alunoFaltasDiv.removeChild(textoAlunoFaltou);
+                        textoAlunoFaltou = null;
+                    }
+                    flag_faltou = false;
+                }
+            }
         })
 	})
 }
+
+/*function aplicaFaltas(){
+    fetch('http://localhost:3000/api/aluno/Carlos%20Pereira', {
+        method: 'PUT',
+        body: JSON.stringify({
+            "error":"",
+            "result":{"id_aluno":3,
+            "nome_aluno":"Carlos Pereira",
+            "nome_turma":"B","n_de_faltas":4,
+            "email_do_responsavel":"carlos@example.com",
+            "id_materia":3}})
+    }).then(resposta => console.log(resposta.status))
+	}; */
 
 function colocarFonteDislexia(){
     document.getElementById('botao_carrega_alunos_pag_inicial').style.fontFamily = "OpenDyslexic3";
