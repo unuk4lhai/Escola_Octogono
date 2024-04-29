@@ -84,7 +84,7 @@ body{
     font-size: 20px;
 }
 
-aside{
+.aluno_pagina_inicial{
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -94,9 +94,31 @@ aside{
     font-size: 20px;
 }
 
+.aluno_pagina_inicial_falta{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 55vw;
+    height: 8vh;
+    background-color: lightcoral;
+    font-family: Kadwa;
+    font-size: 20px;
+}
+
 article{
     font-family: Kadwa;
     font-size: 20px;
+}
+
+#botao_aplica_faltas{
+    width: 20vw;
+    height: 7vh;
+    border-radius: 40px;
+    background-color: #59BB5D;
+    color: white;
+    font-family: Kadwa;
+    font-size: 24px;
+    margin-bottom: 5vh;
 }
 
 #footer_pag_inicial{
